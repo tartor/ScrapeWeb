@@ -1,0 +1,6 @@
+@ScrapeWeb.Api_HostAddress = http://localhost:5293
+
+GET {{ScrapeWeb.Api_HostAddress}}/scrape/
+Accept: application/json
+
+###

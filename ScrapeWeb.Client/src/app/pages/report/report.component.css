@@ -1,0 +1,35 @@
+.content {
+  width: 400px;
+  margin: 50px auto;
+
+  .cond{
+      display: flex;
+      gap: 10px;
+  }
+
+  .report {
+    margin-top:20px;
+    font-size:12px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap:10px;
+    row-gap: 10px;
+
+    div{
+       word-break: break-all;
+    }
+
+  }
+
+  .error {
+    text-align:center;
+    color: red;
+    font-size: 12px;
+    padding-top: 10px;
+  }
+
+  input[type="date"],
+  button {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "Run Multi Http",
+    "Projects": [
+      {
+        "Path": "ScrapeWeb.Web\\ScrapeWeb.Web.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "ScrapeWeb.Api\\ScrapeWeb.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "ScrapeMicroservice\\ScrapeAppServer\\ScrapeAppServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "SessionMicroservice\\SessionAppServer\\SessionAppServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

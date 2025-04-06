@@ -1,0 +1,64 @@
+<div class="content">
+  <h3>Scrape</h3>
+  <br />
+  <p>Please enter the phrase for constructing the Google search query and the Url to find its position in the search results.</p>
+  <br />
+
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="scrape">
+      <label for="selector">Phrase</label>
+      <div>
+        <input name="selector"
+               placeholder="Required"
+               [(ngModel)]="selector"
+               #selectorField="ngModel"
+               required />
+        @if(selectorField.invalid && (selectorField.dirty || selectorField.touched))
+        {
+        @for(err of selectorField.errors?.['server']; track err){
+        <div class="error">{{ err }}</div>
+        }
+
+        @if(selectorField.errors?.['required']){
+        <div class="error">Phrase is required.</div>
+        }
+        }
+      </div>
+      <label for="url">Url</label>
+      <div>
+        <input name="url"
+               placeholder="Required"
+               [(ngModel)]="url"
+               #urlField="ngModel"
+               required />
+        @if(urlField.invalid && (urlField.dirty || urlField.touched))
+        {
+        @for(err of urlField.errors?.['server']; track err){
+        <div class="error">{{ err }}</div>
+        }
+
+        @if(urlField.errors?.['required']){
+        <div class="error">Url is required.</div>
+        }
+        }
+      </div>
+      <div></div>
+      <div>
+        <button [disabled]="isProcessing()">
+          Scrape
+        </button>
+        @if (error()) {
+        <div class="error">{{ error() }}</div>
+        }
+      </div>
+    </div>
+  </form>
+
+
+  @if(scrape()){
+  <br />
+  <br />
+  <br />
+  <p class="result" [innerHtml]="scrape()"></p>
+  }
+</div>

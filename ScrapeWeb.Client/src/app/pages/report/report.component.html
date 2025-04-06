@@ -1,0 +1,35 @@
+<div class="content">
+  <h3>Report</h3>
+  <br />
+  <p>Generate a report displaying the history of scrape results, including the entered phrase and Url.</p>
+  <br />
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="cond">
+      <label>From</label>
+      <input type="date" name="from" [(ngModel)]="from" #fromField="ngModel" />
+      <label>To</label>
+      <input type="date" name="to" [(ngModel)]="to" #toField="ngModel" />
+      <button [disabled]="isProcessing()">
+        Go
+      </button>
+    </div>
+  </form>
+
+  @if (error()) {
+  <div class="error">{{ error() }}</div>
+  }
+
+  <div class="report">
+    <div><b>Place</b></div>
+    <div><b>Date</b></div>
+    <div><b>Url</b></div>
+    <div><b>Phrase</b></div>
+    @for(item of items(); track item){
+    <div><b>{{ item.place ?? -1 | place  }}</b></div>
+    <div>{{ item.stamp | date:"dd MMM" }}</div>
+    <div>{{ item.url  }}</div>
+    <div>{{ item.selector  }}</div>
+    }
+  </div>
+
+</div>

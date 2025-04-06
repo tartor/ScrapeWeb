@@ -1,0 +1,18 @@
+<div class="header">
+
+  @if( (_sessionService.loggedIn$ | async) ){
+  <div class="menu">
+    <label (click)="scrape()">Scrape</label>
+    <label (click)="report()">Report</label>
+    <div class="stretch"></div>
+    <label (click)="logout()">Log out</label>
+  </div>
+  }
+  @else {
+    <div class="menu">
+      <div class="stretch"></div>
+      <label (click)="login()">Log In</label>
+    </div>
+  }
+
+</div>

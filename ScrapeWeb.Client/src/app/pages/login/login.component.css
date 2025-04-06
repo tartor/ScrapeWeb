@@ -1,0 +1,22 @@
+.content {
+  width: 300px;
+  margin: 50px auto;
+
+  .login {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    row-gap: 30px;
+
+    button,
+    input {
+      width:100%;
+    }
+
+    .error {
+      color:red;
+      font-size: 12px;
+      padding-top:10px;
+    }
+  }
+}
